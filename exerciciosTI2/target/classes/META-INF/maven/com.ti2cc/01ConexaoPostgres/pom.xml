@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ti2cc</groupId>
+    <artifactId>01ConexaoPostgres</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <!-- Propriedades do Projeto -->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source> <!-- Versão do Java -->
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spark.version>3.3.0</spark.version> <!-- Versão do Spark -->
+        <postgresql.version>42.2.16</postgresql.version> <!-- Versão do PostgreSQL -->
+    </properties>
+
+    <!-- Dependências do Projeto -->
+    <dependencies>
+    <dependency>
+    <groupId>com.sparkjava</groupId>
+    <artifactId>spark-core</artifactId>
+    <version>2.9.4</version>
+</dependency>
+        <!-- Dependência do Spark Core -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.12</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <!-- Dependência do PostgreSQL -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Configurações de Build -->
+    <build>
+        <plugins>
+            <!-- Plugin do Compilador do Maven -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>3.1.0</version>
+    <configuration>
+        <mainClass>app.Aplicacao</mainClass>
+    </configuration>
+</plugin>
+        </plugins>
+    </build>
+</project>

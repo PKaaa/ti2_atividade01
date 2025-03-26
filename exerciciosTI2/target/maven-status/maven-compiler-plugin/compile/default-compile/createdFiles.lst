@@ -1,0 +1,5 @@
+app\Aplicacao.class
+dao\DAO.class
+dao\ProdutoDAO.class
+service\ProdutoService.class
+model\Produto.class
